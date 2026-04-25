@@ -7,7 +7,7 @@ class Settings(BaseSettings):
 
     gemini_api_key: str = ""
     secret_key: str = "change-me-in-production-32-chars-min"
-    database_url: str = "sqlite+aiosqlite:///./nova.db"
+    database_url: str = "sqlite+aiosqlite:///./opengem.db"
     cors_origins: str = "http://localhost:5173"
     access_token_expire_days: int = 30
 

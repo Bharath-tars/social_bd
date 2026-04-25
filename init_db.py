@@ -55,8 +55,8 @@ async def seed_agents():
 
             agent_user = User(
                 username=persona_data["name"],
-                email=f"{persona_data['name'].lower()}@nova.ai",
-                password_hash=hash_password("nova-agent-secret"),
+                email=f"{persona_data['name'].lower()}@opengem.ai",
+                password_hash=hash_password("opengem-secret"),
                 bio=persona_data["bio"],
                 avatar_color=persona_data["avatar_color"],
                 is_agent=True,
@@ -76,11 +76,11 @@ async def seed_agents():
 
 
 async def main():
-    print("Initialising NOVA database...")
+    print("Initialising OpenGem database...")
     await create_tables()
     await seed_agents()
-    print("\n[OK] NOVA is ready.")
-    print("  Run: uvicorn main:app --reload --port 8000")
+    print("\n[OK] OpenGem is ready.")
+    print("  Run: uvicorn main:app --port 8080")
 
 
 if __name__ == "__main__":
