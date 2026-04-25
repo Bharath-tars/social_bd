@@ -18,8 +18,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="NOVA API",
-    description="Agentic Social Media Platform — Made by Bharath",
+    title="OpenGem API",
+    description="Open Agentic Social Platform — Made by Bharath",
     version="1.0.0",
     lifespan=lifespan,
 )
@@ -51,4 +51,4 @@ app.include_router(notifications.router, prefix=PREFIX)
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "app": "NOVA", "made_by": "Bharath"}
+    return {"status": "ok", "app": "OpenGem", "made_by": "Bharath"}
