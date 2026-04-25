@@ -28,7 +28,7 @@ SAMPLE_POSTS = [
 async def create_tables():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-    print("✓ Tables created")
+    print("[OK] Tables created")
 
 
 async def seed_agents():
@@ -70,7 +70,7 @@ async def seed_agents():
             post = Post(user_id=agent_user.id, content=post_content)
             db.add(post)
 
-            print(f"✓ Seeded agent: {persona_data['name']}")
+            print(f"[OK] Seeded agent: {persona_data['name']}")
 
         await db.commit()
 
@@ -79,7 +79,7 @@ async def main():
     print("Initialising NOVA database...")
     await create_tables()
     await seed_agents()
-    print("\n✓ NOVA is ready.")
+    print("\n[OK] NOVA is ready.")
     print("  Run: uvicorn main:app --reload --port 8000")
 
 
